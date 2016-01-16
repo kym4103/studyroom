@@ -27,12 +27,12 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, "현재 위치에서 검색하기!!", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show(); // fab 버튼 눌렀을 때 action 실행
             }
-        });
+        }); //fab 관련
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout); //메인 레이아웃
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -45,10 +45,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+        //레이아웃 가져오기
+        if (drawer.isDrawerOpen(GravityCompat.START)) { //열려있는 지 확인
+            drawer.closeDrawer(GravityCompat.START); //닫기
         } else {
-            super.onBackPressed();
+            super.onBackPressed(); // 시스템  뒤로 가기 명령
         }
     }
 
